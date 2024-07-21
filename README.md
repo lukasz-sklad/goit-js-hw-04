@@ -1,139 +1,201 @@
-# goit-js-hw-03
-### Zadanie domowe nr 3
+# goit-js-hw-04
+### Zadanie domowe nr 4
 
-* Utwórz repozytorium `goit-js-hw-03`.
-* Utwórz oddzielny plik z rozszerzeniem `.js` dla każdego z zadań 1-3.
+Czas szybko leci, prawda?
+
+Ostatnio nawet nie wiedziałeś, co to są obiekty, a teraz już wiesz jak:
+
+* stworzyć obiekt w JavaScript
+* dodać i zmienić wartość właściwości obiektu
+* zaimplementować iterację po obiekcie
+* pracować z tablicą jednorodnych obiektów
+* odwoływać się do właściwości obiektu w jego metodach
+* używać `spread` i `rest`
+* Nadszedł czas, aby wykonać zadanie i ostatecznie utrwalić te umiejętności!
+
+
+
+__Zadanie domowe №4__
+
+* Stwórz repozytorium `goit-js-hw-04`.
+* Stwórz osobny plik z rozszerzeniem `.js` dla każdego z zadań.
 * Przeczytaj każde zadanie i wykonaj je w edytorze kodu.
-* Upewnij się, że kod jest sformatowany przy użyciu `Prettier` i że po otwarciu aktywnej strony zadania w konsoli nie ma żadnych błędów ani ostrzeżeń.
-* Prześlij swoje zadanie domowe do sprawdzenia
+* Upewnij się, że kod jest sformatowany za pomocą `Prettier`, a w konsoli nie ma błędów ani ostrzeżeń podczas otwierania żywej strony zadania.
+* Prześlij domowe zadanie do sprawdzenia.
 
 
-__Format zadania domowego:__ Zadanie domowe zawiera dwa linki: do plików źródłowych i strony roboczej na `GitHub Pages`.
+__Format oddania:__ Domowa praca zawiera dwa linki: do plików źródłowych i do działającej strony na `GitHub Pages`.
 
 
+__Zadanie 1. Pakowanie towarów__
 
-__Zadanie 1. Generator slug__
+Napisz funkcję `isEnoughCapacity(products, containerSize)`, która oblicza, czy wszystkie towary zmieszczą się w kontenerze podczas pakowania.
 
+Funkcja deklaruje dwa parametry:
 
-
-Zanim rozwiążemy ten problem, zdefiniujmy nowy termin!
-
-Termin `slug` — to czytelny dla człowieka unikalny identyfikator używany w tworzeniu stron internetowych do tworzenia czytelnych adresów URL.
-
-
-
-Na przykład, zamiast wyświetlać użytkownikowi `mysite.com/posts/1q8fh74t`x, w pasku adresu, możesz utworzyć `slug` z tytułu artykułu. W rezultacie adres będzie przyjemniejszy w odbiorze: `mysite.com/posts/arrays-for-beginners`.
+* `products` — obiekt, w którym klucze zawierają nazwy towarów, a ich wartości — ilość tych towarów. Na przykład `{ apples: 2, grapes: 4 }`.
+* `containerSize` — liczba, maksymalna ilość jednostek towaru, którą może pomieścić kontener.
 
 
-
-`Slug` jest zawsze ciągiem małych liter, z wyrazami oddzielonymi myślnikami.
-
-Czy to jest jasne? Zatem wykonajmy zadanie!
+Funkcja powinna zwrócić wynik sprawdzenia, czy wszystkie towary zmieszczą się w kontenerze. Czyli policzyć łączną ilość towarów w obiekcie `products` i zwrócić `true`, jeśli jest ona mniejsza lub równa `containerSize`, i `false`, jeśli nie.
 
 
 
-Napisz funkcję `slugify(title)`, która przyjmuje tytuł artykułu, parametr `title` i zwraca `slug` utworzony z tego ciągu.
-
-Wartością parametru `title` będą ciągi, których słowa są oddzielone tylko spacjami.
-Wszystkie znaki `slug` muszą być pisane małymi literami.
-Wszystkie słowa `slug` muszą być oddzielone myślnikami.
+Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej wywołań.
 
 
-Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić, czy działa poprawnie. Konsola wyświetli wyniki jego działania.
-```javascript
-console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+```
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); // false
+
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
+); // false
 ```
 
 
-Zostaw ten kod do sprawdzenia swojemu mentorowi.
+Zostaw ten kod do sprawdzenia przez mentora.
 
-Na co będzie zwracał uwagę mentor podczas sprawdzania:
+Na co mentor będzie zwracał uwagę podczas sprawdzania:
 
-* Zadeklarowano funkcję slugify(title);
-* Wywołanie `slugify ("Arrays for begginers")` zwraca `"arrays-for-begginers"`;
-* Wywołanie `slugify("English for developer")` zwraca `"english-for-developer"`;
-* Wywołanie `slugify("Ten secrets of JavaScript")` zwraca `"ten-secrets-of-javascript"`;
-* Wywołanie `slugify("How to become a JUNIOR developer in TWO WEEKS")` zwraca "h`ow-to-become-a-junior-developer-in-two-weeks"`.
-
-
-__Zadanie 2. Kompozycja tablic__
+* Zadeklarowana funkcja `isEnoughCapacity(products, containerSize)`
+* Wywołanie `isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)` zwraca `true`
+* Wywołanie `isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12` zwraca `false`
+* Wywołanie `isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)` zwraca `true`
+* Wywołanie `isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)` zwraca `false`
 
 
+____Zadanie 2. Obliczanie kalorii__
 
-Napisz funkcję o nazwie `makeArray`, która przyjmuje trzy parametry: `firstArray` (tablica), `secondArray` (tablica) i `maxLength` (liczba). Funkcja musi utworzyć nową tablicę zawierającą wszystkie elementy z `firstArray`, a następnie wszystkie elementy z `secondArray`.
-
-
-
-* Jeśli liczba elementów w nowej tablicy przekracza maxLength, funkcja musi zwrócić kopię tablicy o długości elementów maxLength.
-* W przeciwnym razie funkcja powinna zwrócić całą nową tablicę.
+Napisz funkcję `calcAverageCalories(days)`, która zwraca średnią dzienną wartość liczby kalorii, które sportowiec spożywał w ciągu tygodnia. Funkcja oczekuje jednego parametru: `days` — tablicy obiektów. Każdy obiekt opisuje dzień tygodnia oraz liczbę kalorii `calories`, spożytych przez sportowca tego dnia. Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej wywołań.
 
 
-Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. Konsola wyświetli wyniki jego działania.
-```javascript
-console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
-console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
-console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
+```
+console.log(
+  calcAverageCalories([
+    { day: "monday", calories: 3010 },
+    { day: "tuesday", calories: 3200 },
+    { day: "wednesday", calories: 3120 },
+    { day: "thursday", calories: 2900 },
+    { day: "friday", calories: 3450 },
+    { day: "saturday", calories: 3280 },
+    { day: "sunday", calories: 3300 }
+  ])
+); // 3180
+
+console.log(
+  calcAverageCalories([
+    { day: "monday", calories: 2040 },
+    { day: "tuesday", calories: 2270 },
+    { day: "wednesday", calories: 2420 },
+    { day: "thursday", calories: 1900 },
+    { day: "friday", calories: 2370 },
+    { day: "saturday", calories: 2280 },
+    { day: "sunday", calories: 2610 }
+  ])
+); // 2270
+
+console.log(
+  calcAverageCalories([])
+); // 0
 ```
 
 
-Zostaw ten kod do sprawdzenia swojemu mentorowi.
-
-Na co będzie zwracał uwagę mentor podczas sprawdzania:
-
-* Zadeklarowano funkcję `makeArray(firstArray, secondArray, maxLength)`;
-* Wywołanie `makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)` zwraca `["Mango", "Poly", "Ajax"]`;
-* Wywołanie `makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)` zwraca `["Mango", "Poly", "Houston", "Ajax"]`;
-* Wywołanie `makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)` zwraca `["Mango", "Ajax", "Chelsea"]`;
-* Wywołanie `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)` zwraca `["Earth", "Jupiter"]`;
-* Wywołanie `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)` zwraca `["Earth", "Jupiter", "Neptune", "Uranus"]`;
-* Wywołanie `makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)` zwraca `[]`;
-* Wywołanie `makeArray()` z losowymi tablicami i losową liczbą zwraca poprawną tablicę.
-
-
-__Zadanie 3. Filtrowanie tablicy liczb__
+Zostaw ten kod do sprawdzenia przez mentora.
 
 
 
-Napisz funkcję `filterArray(numbers, value)`, która jako parametry przyjmuje tablicę liczb `(numbers)` i wartość `(value)`. Funkcja powinna zwrócić nową tablicę zawierającą tylko te liczby z tablicy `number`s, które są większe niż `value`.
+__Na co będzie zwracał uwagę mentor przy sprawdzaniu:__
 
 
+* Zadeklarowana funkcja `calcAverageCalories(days)`
+* Taki wywołanie funkcji `calcAverageCalories zwraca 3180`
 
-Wewnątrz funkcji:
+```
+calcAverageCalories([
+  { day: "monday", calories: 3010 },
+  { day: "tuesday", calories: 3200 },
+  { day: "wednesday", calories: 3120 },
+  { day: "thursday", calories: 2900 },
+  { day: "friday", calories: 3450 },
+  { day: "saturday", calories: 3280 },
+  { day: "sunday", calories: 3300 }
+])
+```
 
-* Utwórz pustą tablicę, do której będziesz dodawać pasujące liczby.
-* Użyj pętli do iteracji przez każdy element tablicy `numbers`.
-* Użyj warunkowej instrukcji `if` wewnątrz pętli, aby sprawdzić każdy element i dodać go do tablicy.
-* Zwróć nową tablicę z pasującymi liczbami jako wynik.
+* Taki wywołanie funkcji `calcAverageCalories` zwraca `2270`
 
+```
+calcAverageCalories([
+  { day: "monday", calories: 2040 },
+  { day: "tuesday", calories: 2270 },
+  { day: "wednesday", calories: 2420 },
+  { day: "thursday", calories: 1900 },
+  { day: "friday", calories: 2370 },
+  { day: "saturday", calories: 2280 },
+  { day: "sunday", calories: 2610 }
+])
+```
 
-Weź poniższy kod i wstaw go po deklaracji funkcji, aby sprawdzić, czy działa poprawnie. Konsola wyświetli wyniki jego działania.
+* Taki wywołanie funkcji `calcAverageCalories` zwraca `0`
 
-
-```javascript
-console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
+```
+calcAverageCalories([])
 ```
 
 
-Zostaw ten kod do sprawdzenia swojemu mentorowi.
+__Zadanie 3. Profil gracza__
 
-Na co będzie zwracał uwagę mentor podczas sprawdzania:
+Obiekt `profile` opisuje profil użytkownika na platformie do gier. W jego właściwościach przechowywane są nazwa profilu `username` oraz liczba aktywnych godzin `playTime`, spędzonych w grze.
 
-* Zadeklarowano funkcję `filterArray(numbers, value)`;
-* Wywołanie funkcji `filterArray([1, 2, 3, 4, 5], 3)` zwraca `[4, 5]`;
-* Wywołanie funkcji `filterArray([1, 2, 3, 4, 5], 4)` zwraca `[5]`;
-* Wywołanie funkcji `filterArray([1, 2, 3, 4, 5], 5)` zwraca `[]`;
-* Wywołanie funkcji `filterArray([12, 24, 8, 41, 76], 38)` zwraca `[41, 76]`;
-* Wywołanie funkcji `filterArray([12, 24, 8, 41, 76], 20)` zwraca `[24, 41, 76]`;
-* Wywołanie funkcji `filterArray()` z losową tablicą i liczbą zwraca poprawną tablicę.
 
-https://lukasz-sklad.github.io/goit-js-hw-03/
+```
+const profile = {
+	username: "Jacob",
+  playTime: 300,
+};
+```
+
+
+Uzupełnij obiekt `profile` metodami do pracy z jego właściwościami.
+
+* Metoda `changeUsername(newName)` powinna przyjmować ciąg znaków (nową nazwę) w parametrze `newName` i zmieniać wartość właściwości `username` na nową. Niczego nie zwraca.
+* Metoda `updatePlayTime(hours)` powinna przyjmować liczbę (ilość godzin) w parametrze `hours` i zwiększać o nią wartość właściwości `playTime`. Niczego nie zwraca.
+* Metoda `getInfo()` powinna zwracać ciąg znaków w formacie `<Username>` ma `<amount> aktywnych godzin!`, gdzie `<Username>` to nazwa profilu, a `<amount>` to liczba godzin spędzonych w grze.
+
+
+Weź kod poniżej i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej działania.
+
+
+```
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
+```
+
+
+Zostaw ten kod do sprawdzenia przez mentora.
+
+Na co będzie zwracał uwagę mentor przy sprawdzaniu:
+
+* Zadeklarowana zmienna `profile`
+* Wartość zmiennej `profile` to obiekt z właściwościami `username`, `playTime`, `getInfo`, `changeUsername` i `updatePlayTime`
+* Wartość właściwości `getInfo` to funkcja
+* Wartość właściwości `changeUsername` to funkcja
+* Wartość właściwości `updatePlayTime` to funkcja
+* Do odwołania się do właściwości obiektu w jego metodach wykorzystywane jest `this`
+
+https://lukasz-sklad.github.io/goit-js-hw-04/

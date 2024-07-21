@@ -74,7 +74,7 @@ Na co mentor będzie zwracał uwagę podczas sprawdzania:
 * Wywołanie `isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)` zwraca `false`
 
 
-____Zadanie 2. Obliczanie kalorii__
+__Zadanie 2. Obliczanie kalorii__
 
 Napisz funkcję `calcAverageCalories(days)`, która zwraca średnią dzienną wartość liczby kalorii, które sportowiec spożywał w ciągu tygodnia. Funkcja oczekuje jednego parametru: `days` — tablicy obiektów. Każdy obiekt opisuje dzień tygodnia oraz liczbę kalorii `calories`, spożytych przez sportowca tego dnia. Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej wywołań.
 

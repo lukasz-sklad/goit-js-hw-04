@@ -1,18 +1,23 @@
 'use strict'
 // Zadeklarowano funkcję isEnoughCapacity(products, containerSize);
 
-console.log(
-  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
+function isEnoughCapacity(products, containerSize) {
+	// Zmienna do przechowywania łącznej ilości produktów
+	let totalProducts = 0
 
-console.log(
-  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
+	// Iteracja przez obiekt products, aby zsumować wszystkie ilości
+	for (let product in products) {
+		totalProducts += products[product]
+	}
 
-console.log(
-  isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)
-); // true
+	// Sprawdzenie, czy łączna ilość produktów mieści się w rozmiarze kontenera
+	return totalProducts <= containerSize
+}
 
-console.log(
-  isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)
-); // false
+console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)) // true
+
+console.log(isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)) // false
+
+console.log(isEnoughCapacity({ apples: 1, lime: 5, tomatos: 3 }, 14)) // true
+
+console.log(isEnoughCapacity({ apples: 18, potatos: 5, oranges: 2 }, 7)) // false

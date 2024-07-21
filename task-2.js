@@ -1,6 +1,20 @@
 'use strict'
 // Zadeklarowano funkcję calcAverageCalories(days)`;
 
+function calcAverageCalories(days) {
+	// if (days.length === 0) return 0 // Sprawdzenie czy lista dni jest pusta
+
+	let totalCalories = 0
+	for (let i = 0; i < days.length; i++) {
+		totalCalories += days[i].calories // Sumowanie kalorii z każdego dnia
+	}
+
+	// return Math.round(totalCalories / days.length) // Obliczanie i zaokrąglanie średniej
+
+	return days.length > 0 ? Math.round(totalCalories / days.length) : 0 // Obliczanie średniej tylko jeśli tablica nie jest pusta
+}
+
+
 console.log(
   calcAverageCalories([
     { day: "monday", calories: 3010 },

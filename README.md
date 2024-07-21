@@ -44,7 +44,7 @@ Funkcja powinna zwrócić wynik sprawdzenia, czy wszystkie towary zmieszczą si�
 Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej wywołań.
 
 
-```
+```javascript
 console.log(
   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
 ); // true
@@ -79,7 +79,7 @@ ____Zadanie 2. Obliczanie kalorii__
 Napisz funkcję `calcAverageCalories(days)`, która zwraca średnią dzienną wartość liczby kalorii, które sportowiec spożywał w ciągu tygodnia. Funkcja oczekuje jednego parametru: `days` — tablicy obiektów. Każdy obiekt opisuje dzień tygodnia oraz liczbę kalorii `calories`, spożytych przez sportowca tego dnia. Weź poniższy kod i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej wywołań.
 
 
-```
+```javascript
 console.log(
   calcAverageCalories([
     { day: "monday", calories: 3010 },
@@ -120,7 +120,7 @@ __Na co będzie zwracał uwagę mentor przy sprawdzaniu:__
 * Zadeklarowana funkcja `calcAverageCalories(days)`
 * Taki wywołanie funkcji `calcAverageCalories zwraca 3180`
 
-```
+```javascript
 calcAverageCalories([
   { day: "monday", calories: 3010 },
   { day: "tuesday", calories: 3200 },
@@ -134,7 +134,7 @@ calcAverageCalories([
 
 * Taki wywołanie funkcji `calcAverageCalories` zwraca `2270`
 
-```
+```javascript
 calcAverageCalories([
   { day: "monday", calories: 2040 },
   { day: "tuesday", calories: 2270 },
@@ -148,7 +148,7 @@ calcAverageCalories([
 
 * Taki wywołanie funkcji `calcAverageCalories` zwraca `0`
 
-```
+```javascript
 calcAverageCalories([])
 ```
 
@@ -158,7 +158,7 @@ __Zadanie 3. Profil gracza__
 Obiekt `profile` opisuje profil użytkownika na platformie do gier. W jego właściwościach przechowywane są nazwa profilu `username` oraz liczba aktywnych godzin `playTime`, spędzonych w grze.
 
 
-```
+```javascript
 const profile = {
 	username: "Jacob",
   playTime: 300,
@@ -176,7 +176,7 @@ Uzupełnij obiekt `profile` metodami do pracy z jego właściwościami.
 Weź kod poniżej i wstaw go po deklaracji swojej funkcji, aby sprawdzić poprawność jej działania. W konsoli zostaną wyświetlone wyniki jej działania.
 
 
-```
+```javascript
 console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
 profile.changeUsername("Marco");
